@@ -1,4 +1,5 @@
-import java.lang.Math;
+import java.util.Random;
+
 
 public class Game {
     //PROPERTIES
@@ -10,7 +11,11 @@ public class Game {
     public Game(State theState){
         this.state = theState;
 
-        this.wumpusLocation = (int) Math.random(0, state.length());
+        Random random = new Random();
+        wumpusLocation = random.nextInt(0, (state.getRowCol() * state.getRowCol()));
+        
+
+        //please
     }
 
     //METHODS
